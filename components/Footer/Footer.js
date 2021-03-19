@@ -1,8 +1,8 @@
 import Image from "next/image";
-import styles from "./Start.module.scss";
-export default function Start() {
+import styles from "./Footer.module.scss";
+export default function Footer() {
   return (
-    <section className={styles.wrapper}>
+    <footer className={styles.wrapper}>
       <div>Przeskalowany układ słoneczny. 10 sekund = 1 rok </div>
       <div className={styles.solarSystem}>
         <div className={styles.sun}>Sun</div>
@@ -104,6 +104,6 @@ export default function Start() {
           </span>
         </div>
       </div>
-    </section>
+    </footer>
   );
 }

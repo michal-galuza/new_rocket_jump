@@ -36,7 +36,7 @@
 }
 .socialWrapper {
   height: 35px;
-  width: 130px;
+  width: 170px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,43 +44,79 @@
 }
 .icon {
   position: relative;
-  width: 35px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   overflow: visible;
-  transition: transform 0.5s linear;
+  transition: transform 0.1s ease-in-out;
+  &:hover {
+    transform: translateY(2px) scale(1.05);
+  }
 }
-.icon:hover {
-  transition: transform 0.5s linear;
-  transform: rotate(360deg);
-}
+
 .insta {
   @extend .icon;
-  width: 35px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   overflow: visible;
-
-  transition: transform 0.5s linear;
 }
-.insta:hover {
-  transition: transform 0.5s linear;
-  transform: rotate(360deg);
+
+.langBtn {
+  width: 30px;
+  height: 30px;
+  font-size: 1.4rem;
 }
 .modal {
   position: fixed;
   top: 0;
   left: 0;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    190deg,
-    rgba(255, 255, 255, 1) 35%,
-    rgba(145, 145, 145, 1) 100%
-  );
-  width: 300px;
-  height: 100vh;
+  background: orange;
+  width: 250px;
+  height: 100%;
   color: black;
-  padding: 20px 0px 0 35px;
+  padding-left: 35px;
   transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   button {
-    color: black;
+    position: absolute;
+    top: 20px;
+    left: 35px;
+    color: white;
+    width: 30px;
+    height: 30px;
+    font-size: 1.6rem;
+  }
+}
+.navItem {
+  color: black;
+  font-weight: 400;
+  position: relative;
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin: 7px;
+  width: 100%;
+  outline: none;
+  &:before {
+    content: " ";
+    transition: transform 0.1s ease-in-out;
+    position: absolute;
+    top: 100%;
+    left: -10px;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    transform: translateX(-200px);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      &:before {
+        transition: transform 0.1s ease-in-out;
+
+        transform: translateX(0);
+      }
+    }
   }
 }

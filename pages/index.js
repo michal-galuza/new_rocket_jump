@@ -3,10 +3,12 @@ import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import Nav from "../components/Nav/Nav";
 import Head from "next/head";
-import Start from "../components/Start/Start";
+import Footer from "../components/Footer/Footer";
+import About from "../components/About/About";
+import Projects from "../components/Projects/Projects";
 export default function Home() {
   const canvasRef = useRef();
-  useLayoutEffect(() => {
+  useEffect(() => {
     let canvas = canvasRef.current;
 
     const context = canvas.getContext("2d");
@@ -23,7 +25,6 @@ export default function Home() {
         radius: Math.random() * 999,
         speed: 0.2,
       };
-      console.log(stars[i]);
     }
 
     function animateStars() {
@@ -75,6 +76,7 @@ export default function Home() {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Rocket Jump</title>
       </Head>
       <Nav />
       <canvas
@@ -95,7 +97,9 @@ export default function Home() {
         </div>
       </header>
       <main className={styles.main}>
-        <Start />
+        <About />
+        <Projects />
+        <Footer />
       </main>
     </>
   );
