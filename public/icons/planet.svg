@@ -1,0 +1,13 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+ 
+  <line stroke-width="20" 
+  stroke="#fff" stroke-linecap="undefined" 
+  stroke-linejoin="undefined" id="svg_1" y2="129.91154"
+   x2="429.84978" y1="547.48998" x1="188.76885" opacity="undefined" fill="#fff"/>
+  <line stroke-width="20" stroke="#fff" stroke-linecap="undefined"
+   stroke-linejoin="undefined" id="svg_2" y2="130.69811" x2="428.89544"
+    y1="130.11018" x1="624.35275" opacity="undefined" fill="none"/>
+ </g>
+</svg>
