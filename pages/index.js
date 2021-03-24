@@ -1,4 +1,5 @@
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import styles from "../styles/home.module.scss";
 import Nav from "../components/Nav/Nav";
@@ -6,8 +7,13 @@ import Head from "next/head";
 import Footer from "../components/Footer/Footer";
 import About from "../components/About/About";
 import Projects from "../components/Projects/Projects";
+
+const Offer = dynamic(() => import("../components/Offer/Offer"));
+const Reviews = dynamic(() => import("../components/Reviews/Reviews"));
+const Contact = dynamic(() => import("../components/Contact/Contact"));
 export default function Home() {
   const canvasRef = useRef();
+
   useEffect(() => {
     let canvas = canvasRef.current;
 
@@ -16,7 +22,7 @@ export default function Home() {
     const centerY = canvas.height / 2;
 
     const stars = [];
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 100; i++) {
       stars[i] = {
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
@@ -71,6 +77,7 @@ export default function Home() {
     }
 
     update();
+    return window.removeEventListener("scroll", () => {});
   }, []);
   return (
     <>
@@ -85,7 +92,7 @@ export default function Home() {
         width="1280"
         height="720"
       />
-      <header className={styles.logoWrapper}>
+      <header id="Start" className={styles.logoWrapper}>
         <div className={styles.logo}>
           <Image
             src="/images/logo.png"
@@ -93,14 +100,21 @@ export default function Home() {
             objectFit="scale-down"
             alt="Rocket Jump logo"
             objectPosition="center"
+            loading="eager"
           />
         </div>
       </header>
-      <main className={styles.main}>
-        <About />
-        <Projects />
+      <div className={styles.main}>
+        <main>
+          <About />
+          <Projects />
+
+          <Offer />
+          <Reviews />
+          <Contact />
+        </main>
         <Footer />
-      </main>
+      </div>
     </>
   );
 }

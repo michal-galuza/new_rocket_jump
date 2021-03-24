@@ -1,11 +1,39 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Light.eot");
+  src: url("/fonts/Montserrat-Light.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Montserrat-Light.woff2") format("woff2"),
+    url("/fonts/Montserrat-Light.woff") format("woff"),
+    url("/fonts/Montserrat-Light.ttf") format("truetype"),
+    url("/fonts/Montserrat-Light.svg#Montserrat-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat-Regular.eot");
+  src: url("/fonts/Montserrat-Regular.eot?#iefix") format("embedded-opentype"),
+    url("/fonts/Montserrat-Regular.woff2") format("woff2"),
+    url("/fonts/Montserrat-Regular.woff") format("woff"),
+    url("/fonts/Montserrat-Regular.ttf") format("truetype"),
+    url("/fonts/Montserrat-Regular.svg#Montserrat-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 html,
 body {
+  scroll-behavior: smooth;
+
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
-  background: radial-gradient(#1c2837 0%, #050608 100%);
+  background: black;
 }
 
 a {
@@ -14,7 +42,24 @@ a {
 }
 
 * {
+  font-family: "Montserrat";
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+.carousel .control-arrow,
+.carousel.carousel-slider .control-arrow {
+  width: 30px;
+  background: radial-gradient(farthest-side at bottom, black 98%, transparent)
+      bottom/calc(2 * var(--d, 7px)) var(--d, 0) no-repeat,
+    linear-gradient(black 0 0) bottom / 55px 50px no-repeat;
+  background-position: center;
+  opacity: 1;
+  padding: 50px 0;
+  &:hover {
+    background: radial-gradient(farthest-side at bottom, black 98%, transparent)
+        bottom/calc(2 * var(--d, 7px)) var(--d, 0) no-repeat,
+      linear-gradient(black 0 0) bottom / 55px 50px no-repeat;
+    background-position: center;
+  }
 }

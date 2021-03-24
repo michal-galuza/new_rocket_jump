@@ -34,16 +34,14 @@ export default function Nav() {
             className={styles.langBtn}
             style={{ color: router.locale === "en" ? "#a8a8a8" : "white" }}
           >
-            {" "}
             PL
           </a>
-        </Link>{" "}
+        </Link>
         <Link href="/" locale="en" passHref>
           <a
             className={styles.langBtn}
             style={{ color: router.locale === "pl" ? "#a8a8a8" : "white" }}
           >
-            {" "}
             EN
           </a>
         </Link>
@@ -89,33 +87,101 @@ export default function Nav() {
       >
         <button onClick={() => setOpen(false)}>X</button>
         <Link href="/" passHref>
-          <a onClick={() => setOpen(false)} className={styles.navItem}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("Start")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
             Start
           </a>
         </Link>
         <Link href="/" passHref>
-          <a onClick={() => setOpen(false)} className={styles.navItem}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("About")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
             Rocket Jump
           </a>
         </Link>
         <Link href="/" passHref>
-          <a onClick={() => setOpen(false)} className={styles.navItem}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("Projects")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
             {router.locale === "pl" ? "Projekty" : "Projects"}
           </a>
         </Link>
         <Link href="/" passHref>
-          <a onClick={() => setOpen(false)} className={styles.navItem}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("Offer")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
             {router.locale === "pl" ? "Oferta" : "Offer"}
           </a>
         </Link>
         <Link href="/" passHref>
-          <a onClick={() => setOpen(false)} className={styles.navItem}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("Feedback")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
             {router.locale === "pl" ? "Opinie" : "Feedback"}
           </a>
         </Link>
         <Link href="/" passHref>
-          <a onClick={() => setOpen(false)} className={styles.navItem}>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("Contact")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
             {router.locale === "pl" ? "Kontakt" : "Contact"}
+          </a>
+        </Link>
+        <Link href="/" passHref>
+          <a
+            onClick={(e) => {
+              e.preventDefault();
+              setOpen(false);
+              document
+                .getElementById("Solar")
+                .scrollIntoView({ block: "center", behavior: "smooth" });
+            }}
+            className={styles.navItem}
+          >
+            {router.locale === "pl" ? "Układ słoneczny" : "Solar system"}
           </a>
         </Link>
       </div>

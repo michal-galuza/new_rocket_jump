@@ -1,9 +1,18 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 import styles from "./Footer.module.scss";
 export default function Footer() {
+  const { locale } = useRouter();
   return (
     <footer className={styles.wrapper}>
-      <div>Przeskalowany układ słoneczny. 10 sekund = 1 rok </div>
+      <h1 id="Solar">
+        {locale === "pl"
+          ? "Model układu słonecznego"
+          : "Model of the solar system"}
+      </h1>
+      <div className={styles.info}>
+        {locale === "pl" ? "1 rok = 10sekund" : "1 year = 10seconds"}
+      </div>
       <div className={styles.solarSystem}>
         <div className={styles.sun}>Sun</div>
         <div className={styles.mercury}>

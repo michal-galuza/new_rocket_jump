@@ -11,6 +11,20 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
+            rel="preload"
+            as="font"
+            href="/fonts/Montserrat-Light.woff2"
+            type="font/woff2"
+            crossOrigin="true"
+          />
+          <link
+            rel="preload"
+            as="font"
+            href="/fonts/Montserrat-Regular.woff2"
+            type="font/woff2"
+            crossOrigin="true"
+          />
+          <link
             rel="apple-touch-icon"
             sizes="180x180"
             href="/images/favicon/apple-touch-icon.png"
@@ -35,6 +49,10 @@ class MyDocument extends Document {
           />
           <meta name="msapplication-TileColor" content="#333333" />
           <meta name="theme-color" content="#333333" />
+          <meta
+            name="description"
+            content="Rocket Jump, zajmiemy się twoją stroną lub aplikacją. Programowanie, projektowanie, administracja to tylko niektóre usługi sprawdź więcej."
+          />
         </Head>
         <body>
           <Main />

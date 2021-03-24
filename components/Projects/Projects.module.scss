@@ -1,54 +1,134 @@
 .wrapper {
   width: 100%;
-  height: 700px;
   background-color: white;
   color: black;
 }
 .title {
   width: 100%;
-  background-color: white;
-  color: rgb(61, 61, 61);
-  font-weight: normal;
-  font-size: 3rem;
+  height: 85px;
   text-align: center;
-  height: 100px;
+  font-weight: 300;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-
-  grid-column: 1/2;
-  grid-row: 1/4;
+  font-size: 2.6rem;
+  @media (min-width: 600px) {
+    font-size: 3rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 4rem;
+    height: 120px;
+  }
 }
 .item {
-  width: 100%;
-  height: 600px;
+  height: 400px;
   display: grid;
-  grid-template-columns: 40% 50%;
-  grid-auto-rows: 60px 1fr 100px;
-  padding: 50px 200px;
-  grid-column-gap: 30px;
-  justify-content: center;
-  align-self: center;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 80px 70px;
   justify-items: center;
   align-items: center;
-  button {
-    width: 200px;
-    height: 50px;
-    background-color: white;
-    border: 1px solid black;
-    font-size: 1.6rem;
-    &:hover {
-      color: white;
-      background-color: black;
-    }
+  padding: 20px 30px;
+  width: 100%;
+  .imageWrapper {
+    grid-column: 1/2;
+    grid-row: 1/2;
   }
   h1 {
-    font-size: 2rem;
-    font-weight: normal;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    font-weight: 300;
   }
+  p {
+    display: none;
+  }
+  a {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    width: 180px;
+    height: 45px;
+    border: 1px solid black;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    background: repeating-linear-gradient(black 0 8px, transparent 0 16px) left /
+        var(--d, 0) 100% no-repeat,
+      repeating-linear-gradient(transparent 0 8px, black 0 16px)
+        right/var(--d, 0) 100% no-repeat;
+    transition: background 0.5s;
+    will-change: background;
+    &:hover {
+      --d: 100%;
+      color: #fff;
+      svg {
+        color: white;
+        fill: white;
+      }
+    }
+    svg {
+      width: 32px;
+      height: 32px;
+      object-fit: scale-down;
+      margin-left: 7px;
+    }
+  }
+  @media (min-width: 600px) {
+    height: 400px;
+    padding: 15px 40px;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr 45px;
+    justify-items: center;
+    align-items: center;
+
+    .imageWrapper {
+      grid-column: 1/2;
+      grid-row: 1/4;
+    }
+    h1 {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      font-size: 2.4rem;
+    }
+    a {
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
+    p {
+      display: unset;
+      padding: 5px 10px;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+  }
+  @media (min-width: 800px) {
+    grid-template-columns: 350px 1fr;
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: 480px 1fr;
+  }
+  @media (min-width: 1300px) {
+    grid-template-columns: 600px 1fr;
+    padding: 20px 60px;
+  }
+  @media (min-width: 1300px) {
+    justify-content: center;
+    align-content: center;
+    max-width: 1300px;
+    grid-template-columns: 600px 1fr;
+    padding: 20px 60px;
+    height: 500px;
+  }
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.itemWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
